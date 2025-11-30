@@ -7,8 +7,8 @@
 }
 .game-board-cont .game-board {
   position: relative;
-  width: 25%;
-  height: 25%;
+  width: 25vw;
+  height: 25vw;
   margin: auto;
 }
 .game-board-cont .game-board .game-board-fg-cont {
@@ -42,6 +42,7 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
+  border: 1px solid red;
 }
 .game-board-grid .game-board-grid-row {
   position: relative;
@@ -71,6 +72,7 @@
   z-index: 2;
   margin: auto;
   border: 1px solid black;
+  transform: scale(0.9);
 }
 .game-board-grid-cell .game-board-grid-cell-mg-cont .game-board-grid-cell-mg {
   position: relative;
