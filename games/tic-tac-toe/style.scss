@@ -7,14 +7,15 @@
     height: 100vh;
     .game-board{
         position: relative;
-        width: 25vw;
-        height: 25vw;
+        width: 45vw;
+        height: 45vw;
         margin: auto;
         .game-board-fg-cont{
             position: absolute;
             z-index: 3;
             width: 100%;
             height: 100%;
+            pointer-events: none;
         }
         .game-board-mg-cont{
             position: absolute;
@@ -66,6 +67,7 @@
         height: 100%;
         z-index: 3;
         margin: auto;
+        pointer-events: none;
     }
     .game-board-grid-cell-mg-cont{
         position: absolute;
@@ -86,6 +88,9 @@
                 margin: auto;
             }
         }
+    }
+    .game-board-grid-cell-mg-cont:hover{
+        background: pink;
     }
     .game-board-grid-cell-bg-cont{
         position: absolute;
