@@ -6,8 +6,10 @@ let gameBoardGridState = []
 let gameBoardGridHistory = []
 let gameBoardGridCursor = []
 let gameBoardGridCursorSize = 1
+
 //GAME PIECES / TOKENS
 let gameBoardToken = ["X","O"]
+
 //GAME PLAYERS
 let playerTeam = ["A","B"]
 let playerTeamMember = []
@@ -46,14 +48,19 @@ for (let cellCount = 0; cellCount < gameBoardGridCell.length; cellCount++){
             gameBoardGridCursor.push(gameBoardGrid.indexOf(gameBoardGridCell[cellCount].getAttribute("ID")))
         }
         updateGameState()
-        gameBoardGridCellMgText[cellCount].textContent = playerTeam[playerTeamCursor]
+        if (playerTeamValidMoves > 0){
+            gameBoardGridCellMgText[cellCount].textContent = gameBoardToken[playerTeamCursor]
+        }else{}
 
     })
 }
 
 //FUNCTIONS
 let updateGameState = function(){
-    if(playerTeamMoves <= (playerTeamValidMoves - 1)){
+    if (playerTeamValidMoves == 0){
+
+    }
+    else if(playerTeamMoves <= (playerTeamValidMoves - 1)){
         playerTeamMoves += 1
     }
     else{
