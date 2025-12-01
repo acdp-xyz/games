@@ -45,12 +45,14 @@
     flex-direction: column;
     width: 100%;
     height: 100%;
-    border: 1px solid red;
+    border: 1px solid black;
+    padding: 2px 2px;
     .game-board-grid-row{
         position: relative;
         display: flex;
         width: 100%;
         height: 33%;
+        margin: auto;
     }
 }
 
@@ -60,6 +62,7 @@
     display: flex;
     align-items: center;
     width: 33%;
+    margin: auto;
     height: 100%;
     .game-board-grid-cell-fg-cont{
         position: absolute;
@@ -90,7 +93,7 @@
         }
     }
     .game-board-grid-cell-mg-cont:hover{
-        background: pink;
+        background: lightgray;
     }
     .game-board-grid-cell-bg-cont{
         position: absolute;
