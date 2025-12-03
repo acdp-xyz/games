@@ -12,20 +12,40 @@ let generateGameID = ()=>{
     }
     return hex1+hex2
 }
- const gameID = generateGameID()
-// console.log(gameID)
+ let gameID = generateGameID()
 
- //GET URL
- let getURL = (param)=>{
-    const currentURL = new URL(window.location.href)
-    const currentURLParams = currentURL.searchParams
+ //GET URL PARAMs DATA
+ let getURLParam = (param)=>{
+    const currentURLParams = new URLSearchParams(window.location.search)
 
-    if (param == "href"){
-        console.log(currentURL.href)
+    if (param == "id"){
+        //console.log(currentURLParams.get(param))
+        return currentURLParams.get(param)
     }
     else{
         console.log(currentURL)
+        return null
     }
  }
 
- getURL("href")
+ //SET URL PARAMs DATA
+ let setURLParam = (attribute, value)=>{
+    const currentURLParams = new URLSearchParams(window.location.search)
+    currentURLParams.set(attribute,value)
+    //console.log (currentURLParams.toString())
+    return currentURLParams.toString()
+ }
+
+//GO TO URL
+let gotoURL = (attribute)=>{
+    const currentURLPath = window.location.origin + window.location.pathname
+    const newURLPath = currentURLPath + '?' + attribute
+    window.location.href = newURLPath
+}
+
+//CHECK GAME ID STATUS
+if(getURLParam("id") === null){
+    gotoURL(setURLParam("id",gameID))
+} else{
+    gameID = getURLParam("id")
+}
