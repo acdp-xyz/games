@@ -13,4 +13,19 @@ let generateGameID = ()=>{
     return hex1+hex2
 }
  const gameID = generateGameID()
- console.log(gameID)
+// console.log(gameID)
+
+ //GET URL
+ let getURL = (param)=>{
+    const currentURL = new URL(window.location.href)
+    const currentURLParams = currentURL.searchParams
+
+    if (param == "href"){
+        console.log(currentURL.href)
+    }
+    else{
+        console.log(currentURL)
+    }
+ }
+
+ getURL("href")
