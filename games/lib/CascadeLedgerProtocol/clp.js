@@ -82,3 +82,39 @@ if(getURLParam("id") === null){
 setInterval(() => {
     //console.log(teamID)
 }, 4000);
+
+
+//SERVER
+let startServer = ()=>{
+    console.log("server Started")
+}
+
+let stopServer = ()=>{
+    console.log("Stop Server")
+}
+
+let findServer = ()=>{
+    console.log("Finding Server")
+}
+
+let joinServer = ()=>{
+    console.log("Join Server")
+}
+
+let leaveServer = ()=>{
+    console.log("Leave Server")
+}
+
+
+//CLIENT
+let startClient = ()=>{
+    console.log("Start Client")
+}
+
+let stopClient = ()=>{
+    console.log("Stop Client")
+}
+
+let findClients = ()=>{
+    console.log("Find Client")
+}
