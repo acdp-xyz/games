@@ -12,24 +12,30 @@ let generateGameID = ()=>{
     }
     return hex1+hex2
 }
+
+//GENERATE UNIQUE TEAM ID
+let generateTeamID = ()=>{
+    const randomNum1 = Math.floor(Math.random() * 16777216)
+    let hex1 = randomNum1.toString(16)
+    while(hex1.length < 6){
+        hex1 = "0" + hex1;
+    }
+    return hex1
+}
+
+//GAME MULTIPLAYER & TEAM 
  let gameID = generateGameID()
+ let teamID = 0
+ let userID = 0
 
  //GET URL PARAMs DATA
  let getURLParam = (param)=>{
     const currentURLParams = new URLSearchParams(window.location.search)
-
-    if (param == "id"){
-        //console.log(currentURLParams.get(param))
-        return currentURLParams.get(param)
-    }
-    else{
-        console.log(currentURL)
-        return null
-    }
+    return currentURLParams.get(param)
  }
 
  //SET URL PARAMs DATA
- let setURLParam = (attribute, value)=>{
+let setURLParam = (attribute, value)=>{
     const currentURLParams = new URLSearchParams(window.location.search)
     currentURLParams.set(attribute,value)
     //console.log (currentURLParams.toString())
@@ -43,9 +49,36 @@ let gotoURL = (attribute)=>{
     window.location.href = newURLPath
 }
 
+//ADD TO URL
+let addtoURL = (attribute, value)=>{
+    const currentURLPath = window.location.href
+    const newURLPath = currentURLPath + '&' + attribute + "=" + value
+    window.location.href = newURLPath
+    //console.log (newURLPath)
+
+}
+
 //CHECK GAME ID STATUS
 if(getURLParam("id") === null){
     gotoURL(setURLParam("id",gameID))
 } else{
     gameID = getURLParam("id")
+    teamID = generateTeamID()
+
+    //console.log(getURLParam("team"))
+
+    if (getURLParam("team") === null){
+        addtoURL('team',1)
+        //console.log("No Team")
+    }
+    else{
+        //gotoURL(setURLParam("team",(getURLParam('team') + 1)))
+        console.log("Yes Team")
+    }
+
 }
+
+//CHECK GAME TEAM STATUS
+setInterval(() => {
+    //console.log(teamID)
+}, 4000);
