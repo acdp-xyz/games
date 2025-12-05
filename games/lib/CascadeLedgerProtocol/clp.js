@@ -76,11 +76,11 @@ if(getURLParam("id") === null){
 
         //Start Server
         if (getURLParam("team") == 1){
-            console.log("Starting Server")
+            console.log("Starting Team 1 Server")
         }
         //Start Client
         else{
-            console.log("Starting Client")
+            console.log("Starting Team X Client")
         }
     }
 
