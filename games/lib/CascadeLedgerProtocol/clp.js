@@ -49,14 +49,33 @@ let gotoURL = (attribute)=>{
     window.location.href = newURLPath
 }
 
-//ADD TO URL
-let addtoURL = (attribute, value)=>{
-    const currentURLPath = window.location.href
-    const newURLPath = currentURLPath + '&' + attribute + "=" + value
-    window.location.href = newURLPath
-    //console.log (newURLPath)
+//ADD TO URL OLD
+// let addtoURL = (attribute, value)=>{
+//     const currentURLPath = window.location.href
+//     const newURLPath = currentURLPath + '&' + attribute + "=" + value
+//     window.location.href = newURLPath
+//     //console.log (newURLPath)
 
+// }
+
+//ADD TO URL (Array)
+let addtoURL = (JSONData)=>{
+    if(Array.isArray(JSONData)){
+        const currentURLPath = window.location.href
+        let urlAttributes = ""
+
+        JSONData.forEach(([key, value], index) => {
+            urlAttributes += `&${key}=${value}`
+        })
+
+        const newURLPath = currentURLPath + urlAttributes
+        window.location.href = newURLPath
+    }
+    else{
+        console.log("Error: Array Only")
+    }
 }
+
 
 //CHECK GAME ID STATUS
 if(getURLParam("id") === null){
@@ -68,8 +87,11 @@ if(getURLParam("id") === null){
     //console.log(getURLParam("team"))
 
     if (getURLParam("team") === null){
-        addtoURL('team',1)
-        //console.log("No Team")
+        //addtoURL('team',1)
+        //ADDING JSON SUPPORT
+        let marley = [["x",123],["y",456],["z",789]]
+        //marley = "dd"
+        addtoURL([["team",1],["user",1]])
     }
     else{
         //gotoURL(setURLParam("team",(getURLParam('team') + 1)))
