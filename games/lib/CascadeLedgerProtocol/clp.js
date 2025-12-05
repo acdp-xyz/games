@@ -73,7 +73,15 @@ if(getURLParam("id") === null){
     }
     else{
         //gotoURL(setURLParam("team",(getURLParam('team') + 1)))
-        console.log("Yes Team")
+
+        //Start Server
+        if (getURLParam("team") == 1){
+            console.log("Starting Server")
+        }
+        //Start Client
+        else{
+            console.log("Starting Client")
+        }
     }
 
 }
