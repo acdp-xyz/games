@@ -28,6 +28,53 @@ let generateTeamID = ()=>{
  let teamID = 0
  let userID = 0
 
+ //SERVER - CLIENT VARIABLES
+ let serverStatus = 0
+ let clientStatus = 0
+ let serverData = ""
+
+ //SERVER - CLIENT FX
+
+ //SERVER
+let startServer = ()=>{
+    clientStatus = 0
+    serverStatus = 1
+    serverData = "Server Data Init"
+    console.log("Server Started")
+}
+
+let stopServer = ()=>{
+    console.log("Stop Server")
+}
+
+let findServer = ()=>{
+    console.log("Finding Server")
+}
+
+let joinServer = ()=>{
+    console.log("Join Server")
+}
+
+let leaveServer = ()=>{
+    console.log("Leave Server")
+}
+
+
+//CLIENT
+let startClient = ()=>{
+    clientStatus = 1
+    serverStatus = 0
+    console.log("Client Started")
+}
+
+let stopClient = ()=>{
+    console.log("Stop Client")
+}
+
+let findClients = ()=>{
+    console.log("Find Client")
+}
+
  //GET URL PARAMs DATA
  let getURLParam = (param)=>{
     const currentURLParams = new URLSearchParams(window.location.search)
@@ -98,11 +145,11 @@ if(getURLParam("id") === null){
 
         //Start Server
         if (getURLParam("team") == 1){
-            console.log("Starting Team 1 Server")
+            startServer()
         }
         //Start Client
         else{
-            console.log("Starting Team X Client")
+            startClient()
         }
     }
 
@@ -112,39 +159,3 @@ if(getURLParam("id") === null){
 setInterval(() => {
     //console.log(teamID)
 }, 4000);
-
-
-//SERVER
-let startServer = ()=>{
-    console.log("server Started")
-}
-
-let stopServer = ()=>{
-    console.log("Stop Server")
-}
-
-let findServer = ()=>{
-    console.log("Finding Server")
-}
-
-let joinServer = ()=>{
-    console.log("Join Server")
-}
-
-let leaveServer = ()=>{
-    console.log("Leave Server")
-}
-
-
-//CLIENT
-let startClient = ()=>{
-    console.log("Start Client")
-}
-
-let stopClient = ()=>{
-    console.log("Stop Client")
-}
-
-let findClients = ()=>{
-    console.log("Find Client")
-}
