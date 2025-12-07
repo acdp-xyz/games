@@ -48,6 +48,7 @@ let stopServer = ()=>{
 }
 
 let findServer = ()=>{
+    
     console.log("Finding Server")
 }
 
@@ -150,6 +151,7 @@ if(getURLParam("id") === null){
         //Start Client
         else{
             startClient()
+            findServer()
         }
     }
 
