@@ -103,3 +103,28 @@
         margin: auto;
     }
 }
+
+//GAME FORM
+.game-form-area-cont{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    .game-form-area{
+        position: relative;
+        width: 45vw;
+        margin: auto;
+        .game-form{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: unset;
+            margin: unset;
+            textarea{
+                display: none;
+                width: 100%;
+            }
+        }
+    }
+}

@@ -99,4 +99,28 @@
   height: 100%;
   z-index: 1;
   margin: auto;
+}
+
+.game-form-area-cont {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.game-form-area-cont .game-form-area {
+  position: relative;
+  width: 45vw;
+  margin: auto;
+}
+.game-form-area-cont .game-form-area .game-form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: unset;
+  margin: unset;
+}
+.game-form-area-cont .game-form-area .game-form textarea {
+  display: none;
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */
