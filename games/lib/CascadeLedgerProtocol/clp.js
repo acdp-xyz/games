@@ -33,7 +33,8 @@ let generateTeamID = ()=>{
  let clientStatus = 0
  let serverData = ""
 
- //SERVER - CLIENT FX
+//GAME BOARD
+let textarea = document.getElementById("game-form-textarea")
 
  //SERVER
 let startServer = ()=>{
@@ -41,6 +42,8 @@ let startServer = ()=>{
     serverStatus = 1
     serverData = "Server Data Init"
     console.log("Server Started")
+
+    textarea.textContent = gameBoardGrid
 }
 
 let stopServer = ()=>{
