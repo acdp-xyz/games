@@ -164,8 +164,23 @@
     <!-- GAME NETWORKING FORM -->
      <div class="game-form-area-cont">
         <div class="game-form-area">
-            <form class="game-form" id="game-form">
+            <form class="game-form" id="game-form" action="http://localhost/api/" method="post">
+                <label for="name">Game ID:</label>
+                <input type="text" id="id" name="id">
+
+                <label for="name">Team ID:</label>
+                <input type="text" id="team" name="team">
+
+                <label for="user">User ID:</label>
+                <input type="text" id="user" name="user">
+
+                <label for="gameState">Game State:</label>
+                <textarea type="text" id="gameState" name="gameState"></textarea>
+
+                <br>
+                <br>
                 <textarea class="game-form-textarea" id="game-form-textarea" placeholder="Game Form"></textarea>
+                <input type="submit" value="Submit Data">
             </form>
         </div>
      </div>
