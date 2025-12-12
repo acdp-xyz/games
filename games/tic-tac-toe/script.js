@@ -74,3 +74,11 @@ let updateGameState = function(){
         playerTeamMoves = 1
     }   
 }
+
+//SEND FORM DATA
+let gameForm = document.getElementById("game-form")
+let submitBtn = document.getElementById("formSubmit")
+gameForm.addEventListener("submit",(e)=>{
+    e.preventDefault()
+    alert("Submit Btn Click")
+})
